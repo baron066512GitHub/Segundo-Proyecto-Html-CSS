@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrontEnd Store</title>
+
+    <link rel="stylesheet" href="CSS/normalize.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">    
+
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+
+<body>                                              <!-- En body va todo el codigo html-->  
+    <header class="header">                                        <!-- El header es para los elementos de la pagina que van en la cabecera o parte superior de la pagina-->
+        <a href="index.html">                       <!-- Para el enlace de la imagen principal para que lleve al inicio de la pagina principal-->
+            <img class="header__logo" src="logo.png" alt="Logotipo">     <!-- src para adjuntar la ubicacion de la imagen a seleccionar-->
+        </a>
+    </header>
+
+    <nav class="navegacion">                                       <!-- Nav para barras de navegacion-->
+        <a class="navegacion__enlace navegacion__enlace--activo" href="index.html">Tienda</a>                  <!-- href es para adjuntar el link al hacer clic-->
+        <a class="navegacion__enlace " href="nosotros.html">Nosotros</a>                <!-- La etiqueta "a" es para hacer textos que puedas clicar(enlaces)-->
+    </nav>
+
+    <main class="contenedor">                                           <!-- Main sirve para poner la informacion principal de la pagina-->
+        <h1>ReactJS</h1>
+
+        <div class="camisa">
+            <img class="camisa__imagen" src="3.jpg" alt="imagen del producto">
+            <div class="camisa__contenido">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero odio voluptatibus animi obcaecati quibusdam sint ea at repellat rerum tempora dolore, rem facilis molestias perspiciatis iure debitis maxime ullam ipsum?</p>
+                
+                <form class="formulario">                                               <!-- Usamos un formulario -->
+                    <select class="formulario__campo">                                                            <!-- Usamos select para un formulario de tipo seleccion-->
+                        <option disabled selected>--Seleccionar Talla--</option>        <!-- Usamos option para poner la opcion que queramos para el caso de seleccionar talla ponemos disabled para que no sea una opcion posible a seleccionar, pero esta lo deshabilitara, por lo tanto para que se seleccione usamos "selected"-->
+                        <option>Pequeña</option>
+                        <option>Mediana</option>
+                        <option>Grande</option>
+                    </select>
+                    <input class="formulario__campo" type="number" placeholder="Cantidad" min="1">                <!-- Usamos input para que sea un campo en el que podamos escribir, luego type="number"  para que solo pueda recibir numeros y no otros caracteres, luego placerholder que sera el mensaje que estara dentro de la caja y luego min="1" para que cuente a partir de el numero 1 en adelante y no tome numeros negativos-->
+                    <input class="formulario__submit" type="submit" value="Agregar al Carrito">                    <!-- Usamos el tipo submit para hacer un boton que es el que envia la informacion del formulario y el value va el mensaje del mismo-->
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p class="footer__texto">Front End Store - Todos los derechos reservados 2024 ©</p>
+    </footer>
+
+</body>
+</html>
