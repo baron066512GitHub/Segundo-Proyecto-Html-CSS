@@ -1,0 +1,278 @@
+:root{
+    --primario: #9c27b0;
+    --primario_oscuro: #89119D;
+    --secundario: #FFCE00;
+    --secundario_oscuro: rgb(233,287,2);
+    --blanco: #FFF;
+    --negro: #000;
+    --fuente_principal: "Staatliches", sans-serif;
+    --rosadito: rgb(245, 79, 209);
+      
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;           /** para hacer 10 px = 1 rem **/
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/** GLOBALES **/
+
+body{
+    background-color: var(--primario);      /**Color de fondo del cuerpo de la pagina**/
+    font-size: 1.6rem;                      /** Tamaño de la fuente **/
+    line-height: 1.5;                       /** Interlineado **/
+}
+
+p{
+    font-size: 1.8rem;                          /** Para los parrafos el tamaño es 1.8**/
+    font-family: Arial, Helvetica, sans-serif;  /**Las fuentes del parrafo van a utilizar arial,helvetica y sans-serif**/
+    color: var(--blanco);                       /** Color blanco para la fuente de los parrafos**/
+}
+
+a{  /** Enlaces (URLS)**/
+    text-decoration: none;                      /**Para quitarle el subrayado a la url**/
+}
+
+img{
+    width: 100%;                                
+}
+
+.contenedor{
+    max-width: 120rem;                      /** Tamaño maximo del contenedor **/
+    margin: 0 auto;                         /** Para centrar los objetos **/
+}
+
+h1,h2,h3{
+    text-align: center;                     /**Para alinear texto en este caso al centro**/
+    color: var(--secundario);               /**Color para los h1,h2,h3**/
+    font-family: var(--fuente_principal);   
+}
+
+h1{
+    font-size: 4rem;                        /**Tamaño de la fuente de cada h**/
+}
+
+h2{
+    font-size: 3.2rem;
+}
+
+h3{
+    font-size: 2.4rem;
+}
+
+/**HEADER**/
+.header{
+    display: flex;                          /**Display flex, para hacer una barra con los elementos de manera horizontal**/
+    justify-content: center;                /**justify-content es para darle horientacion al objeto en este caso al centro**/
+}
+
+.header__logo{
+    margin: 3rem 0;                         /**Margen de 3rem arriba y abajo y 0 en derecha e izquierda**/
+}
+
+/** FOOTER **/
+
+.footer{
+    background-color: var(--primario_oscuro);   /** Le damos color de fondo oscuro **/
+    padding: 1rem 0;                            /** Le damos amplitud de 1 rem arriba y abajo y 0 izq. y der.**/
+    margin-top: 2rem;                           /** Le damos margen superior de 2 rem **/
+}
+
+.footer__texto{
+    text-align: center;                         /** Alineamos el texto **/
+    font-family: var(--fuente_principal);       /** Añadimos la fuente **/
+    font-size: 2.2rem;                          /** Ponemos mas tamaño **/
+}
+
+/**NAVEGACION**/
+.navegacion{
+    background-color: var(--primario_oscuro);   /**Color de fondo para la navegacion**/
+    padding: 1rem 0;                            /** Padding = Relleno, para hacer mas grande la barra 1rem abajo y arriba y 0 der, e izq.**/
+    display: flex;
+    justify-content: center;
+    gap: 2rem;                                  /**gap se usa para espaciado entre los textos en este caso 2 rem**/
+}
+
+.navegacion__enlace{
+    font-family: var(--fuente_principal);       /**Para colocar la fuente selecionada**/
+    color: var(--blanco);                       /** Color de fuente**/
+    font-size: 3rem;                            /**Tamaño de la fuente**/
+}
+
+.navegacion__enlace--activo,
+.navegacion__enlace:hover{                      /**El hover es para cuando el mouse pase encima de ese elemento este cambie su apariencia segun que**/
+    color: var(--secundario);                   /**Le damos un color secundario cuando el mouse pasa por encima**/
+
+}
+
+
+/** GRID **/
+
+.grid{
+    display: grid;                                  /** Ponemos un display grid (grilla) **/
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    /**column-gap: 2rem;                            /** Hacemos una separacion de comlumna de 2 rem**/
+    /**row-gap: 2rem;                               /** Y una separacion por fila de 2 rem **/
+    gap: 2rem;                                      /** O usando una sintaxis mas corta usamos gap**/
+}
+
+@media (min-width: 768px) {
+    .grid{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+/**PRODUCTOS**/
+
+.producto{
+    background-color: var(--primario_oscuro);       /** Le ponemos un color de fondo al contenido **/
+    padding: 1.3rem;                                  /** Ponemos un padding para que la imagen no este pegada al margen**/
+}
+
+.producto:hover{
+    background-color: var(--rosadito);
+    .producto__nombre{
+        color: #FFCE00;
+    }
+    margin: 1rem;
+}
+
+.producto__nombre{
+    font-size: 4rem;                                /** Le damos mas tamaño a nombre y al precio**/
+}
+
+.producto__precio{
+    font-size: 2.8rem;
+    color: var(--secundario);
+}
+
+.producto__nombre,
+.producto__precio{
+    font-family: var(--fuente_principal);           /** Le colocamos la fuente **/ 
+    text-align: center;                             /** Centramos el texto **/
+    margin: 1rem 0;                                 /** Ajustamos los margenes ya que por defecto vienen muy grandes **/ 
+    line-height: 1.2;                               /** Ponemos un interlineado mas pequeño **/
+}
+
+/** GRAFICOS **/
+
+.grafico{
+    min-height: 30rem;
+    background-repeat: no-repeat;                   /** Para que las imagenes de background no se repitan **/ 
+    background-size: cover;                         /** Usamos bg-size con cover para curbrir el espacio que se quita al usar el no repeat de bg-repeat **/
+    grid-column: 1 / 3;
+}
+
+.grafico--camisas{
+    grid-row: 2 / 3;                                /** El grafico de camisas va estar posicionado entre las filas 2 y 3 y comlumna 1 y 3 **/
+    background-image: url(../grafico1.jpg);         /** Ponemos la imagen del grafico **/
+}
+
+.grafico--node{ 
+    background-image: url(../grafico2.jpg);
+    grid-row: 8 / 9;                    
+}
+
+@media (min-width: 768px) {                         /** Media QUERY para dispositivos con pantallas +768px**/
+    .grafico--node{
+        grid-row: 5 / 6;
+        grid-column: 2 / 4;
+    }
+}
+
+
+/** NOSOTROS **/
+
+.nosotros{
+    display: grid;                              /** Definimos como grid**/
+    grid-template-rows: repeat(2,auto);       /** Definimos por columna en 2 columna en 1 fraccion**/
+}
+
+@media (min-width: 768px) {
+    .nosotros{
+        grid-template-columns: repeat(2,1fr);       /** Definimos por columna en 2 columna en 1 fraccion**/
+        column-gap: 2rem;
+    }
+}
+
+.nosotros__imagen{
+    grid-row: 1 / 2;
+}
+
+@media (min-width: 768px) {
+    .nosotros__imagen{
+        grid-column: 2 / 3;
+    }
+}
+
+/** Bloques **/
+.bloques{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:2rem;
+}
+
+@media (min-width: 768px) {
+    .bloques{
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+
+.bloque{
+    text-align: center;
+}
+
+.bloque__titulo{
+    margin: 0;
+}
+
+/**.bloque__imagen{
+    width: 100%;
+}**/
+
+/** PAGINA DEL PRODUCTO **/
+@media (min-width: 768px) {
+    .camisa{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 2rem;
+    }    
+}
+
+.formulario{
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 2rem;
+}
+
+.formulario__campo{
+    /** border-color: var(--primario_oscuro);       /** Usamos border color para ponerle un color alrededor de la casilla**/
+    /**border-width: 1rem;                         /** Luego boder width para hacerlo mas ancho y alto**/
+    /**border-style: solid;                        /** Y border solid para que el color se vea solido y no esa combinacion extraña que trae por defecto las casillas xd**/
+
+    border: 1rem solid var(--primario_oscuro);  /** O podemos Usar Border que abarca esas 3 funciones, recibe primero el width, luego style y de ultimo el color**/
+    background-color: var(--primario);          /** O usar background-color: transparent **/
+    color: var(--blanco);
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+    appearance: none;
+}
+
+.formulario__submit{
+    background-color: var(--secundario);
+    border: none;
+    font-size: 2rem;
+    font-family: var(--fuente_principal);
+    padding: 2rem;
+    transition: background-color .2s ease;  /** Usamos transition para hacer una animacion pasamos el valor que en este caso es background color, luego especificamos los seg que tardar en hacer efecto la animacion y luego usamo ease**/
+    grid-column: 1 / 3;
+}
+
+.formulario__submit:hover{
+    cursor: pointer;
+    background-color: var(--secundario_oscuro);
+}
